@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    image: "postgres:9.6"
+    container_name: "postgres_9.6"
+    ports:
+      - "5496:5432"
+    volumes:
+      - ~/.docker-stack/postgresql/96:/var/lib/postgresql/data
+    networks:
+      - postgresql
+
+networks:
+  postgresql:
+    name: postgresql_96

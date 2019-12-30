@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    image: "postgres:11.6"
+    container_name: "postgres_11.6"
+    ports:
+      - "5411:5432"
+    volumes:
+      - ~/.docker-stack/postgresql/11:/var/lib/postgresql/data
+    networks:
+      - postgresql
+
+networks:
+  postgresql:
+    name: postgresql_11

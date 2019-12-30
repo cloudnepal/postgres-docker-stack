@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    image: "postgres:latest"
+    container_name: "postgres_latest"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/.docker-stack/postgresql/latest:/var/lib/postgresql/data
+    networks:
+      - postgresql
+
+networks:
+  postgresql:
+    name: postgresql_latest
